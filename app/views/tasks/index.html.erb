@@ -1,15 +1,20 @@
-<h1>Your tasks</h1>
-
-<%= link_to "Click here to add a new task", new_path %>
-
-<% @tasks.each do |item| %>
- <ul>
-  <li>
-    <% if item.completed == true %>
-      <%= link_to "[X] #{item.title}", task_path(item) %>
-    <% else %>
-     <%= link_to "[] #{item.title}", task_path(item) %>
+<div class="container">
+  <h1>Your tasks</h1>
+  <div class="task-title">
+    <% @tasks.each do |item| %>
+    <ul>
+      <li>
+        <% if item.completed == true %>
+          <%= link_to "[X] #{item.title}", task_path(item) %>
+        <% else %>
+        <%= link_to "[] #{item.title}", task_path(item) %>
+        <% end %>
+        </li>
+      </ul>
     <% end %>
-    </li>
-  </ul>
-<% end %>
+  </div>
+
+  <div class="description-task">
+    <%= link_to "Click here to add a new task", new_path %>
+  </div>
+</div>

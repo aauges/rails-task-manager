@@ -1,12 +1,15 @@
-<h1> <%= @task.title %> </h1>
+<div class="container">
+  <h1> <%= @task.title %> </h1>
 
-<p> <%= @task.details %></p>
+  <p> <%= @task.details %></p>
+  <ul>
+  <li><%= link_to "Edit this task", edit_path %></li>
+  <li><%= link_to "Back to the index", tasks_path %></li>
 
-<%= link_to "Edit this task", edit_path %>
-
-<%= link_to "Back to the index", tasks_path %>
-
-<%= link_to "Delete #{@task.title}",
-            task_path(@task),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
+  <li><%= link_to "Delete #{@task.title}",
+              task_path(@task),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+  </li>
+  </ul>
+</div>
